@@ -1,5 +1,9 @@
 package com.wtf.medico.entity;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 import org.springframework.data.annotation.Id;
 
 public class User {
@@ -7,6 +11,7 @@ public class User {
 	@Id
 	private String username;
 	private String password;
+	private Boolean status;
 	
 	public String getUsername() {
 		return username;
@@ -24,6 +29,14 @@ public class User {
 		this.password = password;
 	}
 	
+	public Boolean getStatus() {
+		return status;
+	}
+
+	public void setStatus(Boolean status) {
+		this.status = status;
+	}
+
 	public User() {
 		
 	}
@@ -32,9 +45,11 @@ public class User {
 		this.username = username;
 		this.password = password;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "User [username=" + username + ", password=" + password + "]";
+		return "User [username=" + username + ", password=" + password + ", status=" + status + "]";
 	}
+	
+	
 }
